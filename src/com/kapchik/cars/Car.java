@@ -1,20 +1,21 @@
 package com.kapchik.cars;
 
-import com.kapchik.wheels.Wheel;
+import com.kapchik.engines.Engine;
 
-public abstract class Car {
-    private final Wheel wheel;
+public abstract class Car implements CarInterface {
+    private final Engine engine; //название
+    private final int volumeOfFuelTank; //объем бензобака
 
-    public Car(Wheel wheel) {
-        this.wheel = wheel;
+    public Engine getEngine() {
+        return engine;
     }
 
-    public String getWheelName() {
-        return wheel.getName();
+    public int getVolumeOfFuelTank() {
+        return volumeOfFuelTank;
     }
 
-    public int getWheelRadius() {
-        return wheel.getRadius();
+    public Car(Engine engine, int volumeOfFuelTank) {
+        this.engine = engine;
+        this.volumeOfFuelTank = volumeOfFuelTank;
     }
-
 }
