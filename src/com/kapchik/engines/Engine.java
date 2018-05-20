@@ -3,10 +3,14 @@ package com.kapchik.engines;
 import java.util.Random;
 
 public abstract class Engine {
-    private final String name; //название
-    private final int maxSpeed; //максимальная скорость
-    private final int boost;  //ускорение км/мин
-    private final int fuelConsumption; //расход топлива на 100 км
+    /** Название */
+    private final String name;
+    /** Максимальная скорость */
+    private final int maxSpeed;
+    /** Ускорение км/мин */
+    private final int boost;
+    /** Расход топлива на 100 км */
+    private final int fuelConsumption;
 
     public Engine(String name, int maxSpeed, int boost, int fuelConsumption) {
         this.maxSpeed = maxSpeed;
@@ -15,10 +19,10 @@ public abstract class Engine {
         this.fuelConsumption = fuelConsumption;
     }
 
-    public void checkEngine() throws EngineIsBroken {
+    public void checkEngine() throws EngineBrokenException {
         Random random = new Random();
         if (random.nextInt(15) == 5) {
-            throw new EngineIsBroken();
+            throw new EngineBrokenException();
         }
     }
 

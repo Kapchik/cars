@@ -1,16 +1,12 @@
 package com.kapchik.cars;
 
 import com.kapchik.engines.EJ7;
-import com.kapchik.engines.EngineIsBroken;
+import com.kapchik.engines.EngineBrokenException;
 
 public class Toyota extends Car {
+
     public Toyota() {
         super(new EJ7(), 16);
-    }
-
-    @Override
-    public String toString() {
-        return "Toyota";
     }
 
     @Override
@@ -32,7 +28,7 @@ public class Toyota extends Car {
                     speed = getEngine().getMaxSpeed();
                 }
 
-                distance += speed * 1;
+                distance += speed;
 
                 availableFuel = getVolumeOfFuelTank() - (getEngine().getFuelConsumption() * distance) / 100;
 
@@ -41,8 +37,9 @@ public class Toyota extends Car {
                 getEngine().checkEngine();
             }
             System.out.println("Gasoline is end.");
-        } catch (EngineIsBroken engineIsBroken) {
-            System.out.println("Engine is broken.");
+        } catch (EngineBrokenException ex) {
+            System.err.println("Engine is broken");
+            ex.printStackTrace();
         } finally {
             stop();
         }
@@ -52,4 +49,10 @@ public class Toyota extends Car {
     public void stop() {
         System.out.println("Car is stoped.");
     }
+
+    @Override
+    public String toString() {
+        return "Toyota";
+    }
+
 }
