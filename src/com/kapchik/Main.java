@@ -29,7 +29,7 @@ public class Main {
 
         Car car = new Toyota(currentFuel);
 
-        System.out.println("Start testing new car " + car.toString() + " with engine " + car.getEngine().getName() + ":");
+        System.out.println("Start testing new car " + car.toString() + " with engine " + car.getEngine().getNAME() + ":");
 
         System.out.println("Speed =   0,00 km/h; Distance =   0,00 km; Time = 00,0 min; Available fuel = " + car.getCurrentFuel() + " l; Engine wear =  0,0.");
 

@@ -26,14 +26,14 @@ public class Toyota extends Car {
 
         this.currentDistance += DISTANCE;
 
-        this.currentSpeed = Math.sqrt(2 * getEngine().getBoost() * DISTANCE + Math.pow(currentSpeed, 2));
+        this.currentSpeed = Math.sqrt(2 * getEngine().getBOOST() * DISTANCE + Math.pow(currentSpeed, 2));
 
-        if (currentSpeed > getEngine().getMaxSpeed()) {
-            this.currentSpeed = getEngine().getMaxSpeed();
+        if (currentSpeed > getEngine().getMAX_SPEED()) {
+            this.currentSpeed = getEngine().getMAX_SPEED();
         }
 
         if (currentSpeed != previousSpeed) {
-            this.currentTime += (currentSpeed - previousSpeed) / getEngine().getBoost();
+            this.currentTime += (currentSpeed - previousSpeed) / getEngine().getBOOST();
         } else {
             this.currentTime += DISTANCE / currentSpeed;
         }

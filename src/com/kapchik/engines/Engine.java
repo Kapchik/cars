@@ -4,11 +4,11 @@ import java.util.Random;
 
 public abstract class Engine {
     /** Название двигателя */
-    private final String name;
+    private final String NAME;
     /** Максимальная скорость (км/ч) */
-    private final int maxSpeed;
+    private final int MAX_SPEED;
     /** Ускорение (км/ч^2) */
-    private final int boost;
+    private final int BOOST;
     /** Расход топлива на 100 км */
     private final int FUEL_CONSUMPTION;
     /** Ресурс работы (км) */
@@ -16,10 +16,10 @@ public abstract class Engine {
     /** Коэффициент надежности двигателя */
     private final double COEF_OF_RELIABILITY;
 
-    public Engine(String name, int maxSpeed, int boost, int FUEL_CONSUMPTION, int LIFE_TIME) {
-        this.maxSpeed = maxSpeed;
-        this.name = name;
-        this.boost = boost;
+    public Engine(String NAME, int MAX_SPEED, int BOOST, int FUEL_CONSUMPTION, int LIFE_TIME) {
+        this.MAX_SPEED = MAX_SPEED;
+        this.NAME = NAME;
+        this.BOOST = BOOST;
         this.FUEL_CONSUMPTION = FUEL_CONSUMPTION;
         this.COEF_OF_RELIABILITY = 0.5 + new Random().nextDouble() * 0.5;
         this.LIFE_TIME = LIFE_TIME;
@@ -32,16 +32,16 @@ public abstract class Engine {
         }
     }
 
-    public String getName() {
-        return name;
+    public String getNAME() {
+        return NAME;
     }
 
-    public int getMaxSpeed() {
-        return maxSpeed;
+    public int getMAX_SPEED() {
+        return MAX_SPEED;
     }
 
-    public int getBoost() {
-        return boost;
+    public int getBOOST() {
+        return BOOST;
     }
 
     public int getFUEL_CONSUMPTION() {
